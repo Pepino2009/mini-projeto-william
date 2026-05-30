@@ -123,7 +123,7 @@ void main() {
     print('Prioridade: ${t.prioridade}');
     print('Valor: R\$ ${t.valor}');
     print('Horas: ${t.horas}');
-    print('-----------------------------------------');
+    print('------------------');
   }
 print('\n==\n');
 
