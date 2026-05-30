@@ -243,7 +243,7 @@ print('Tarefas com dados incompletos:');
       }
     }
   }
-  print('-------------');
+  print('------------');
  }
 class ModeloBase {
   int id;
