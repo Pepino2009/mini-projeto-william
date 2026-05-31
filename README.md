@@ -20,17 +20,22 @@ O projeto aplica conceitos importantes de POO:
 
 O relatório final utiliza métodos de alta ordem para processar informações de forma eficiente:
 
-- ".map()": converte mapas em objetos.
-- ".where()": filtra tarefas conforme critérios definidos.
-- ".toSet()": remove valores duplicados.
-- ".fold()": calcula totais de valores e horas.
+- .map()": converte mapas em objetos.
+- .where()": filtra tarefas conforme critérios definidos.
+- .toSet()": remove valores duplicados.
+- .fold()": calcula totais de valores e horas.
 
 5. Resultado
 
 O sistema gera relatórios organizados e estatísticos, demonstrando o uso de boas práticas de Dart, Programação Orientada a Objetos e processamento eficiente de coleções.
 
-Segue o link do Trello/Kanban abaixo por aqui também.
+Segue o link do repositório!
+https://github.com/Pepino2009/mini-projeto-william
+
+
+Segue o link do Trello/Kanban abaixo por aqui também!
 https://trello.com/invite/b/6a1b2930693e938342bcaa8c/ATTIea0cb1078c5d49a3a6726157a9bcb51423005D38/mini-projeto-william
 
-Segue o link do video aqui explicativo.
+
+Segue o link do video aqui explicativo!
 

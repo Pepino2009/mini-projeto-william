@@ -65,6 +65,7 @@ final List<Map<String, dynamic>> dadosTarefas = [
   },
 ];
 
+// CLASSE DO MODELO //
 class Tarefa {
   int id;
 String? titulo;
@@ -84,22 +85,26 @@ Tarefa({
     this.horas,
   });
 }
+// USADO DOUBLE PARA CONVERTER //
 double converterValor(dynamic valor) {
   if (valor == null) {
     return 0.0;
   }
+
   String valorTexto = valor.toString();
   valorTexto = valorTexto.replaceAll('R\$', '');
   valorTexto = valorTexto.replaceAll(' ', '');
   valorTexto = valorTexto.replaceAll(',', '.');
    return double.tryParse(valorTexto) ?? 0.0;
 }
+// CONVERTER HORAS //
 int converterHoras(dynamic horas) {
   if (horas == null) {
     return 0;
   }
   return int.tryParse(horas.toString()) ?? 0;
 }
+
 Tarefa converterMapParaTarefa(Map<String, dynamic> item) {
   return Tarefa(
     id: item['id'] as int,
@@ -111,6 +116,7 @@ Tarefa converterMapParaTarefa(Map<String, dynamic> item) {
     horas: converterHoras(item['horas']),
   );
 }
+// COMANDO MAIN INICIADO //
 void main() {
   var listaTarefas = dadosTarefas.map((map) => converterMapParaTarefa(map)).toList();
 
@@ -127,6 +133,7 @@ void main() {
   }
 print('\n==\n');
 
+// FILTRAGEM DA TAREFA POR STATUS //
  var concluidas = listaTarefas.where((t) => t.status == 'concluida').toList();
   print('Tarefas concluidas:');
   for (var t in concluidas) {
@@ -149,6 +156,7 @@ var canceladas = listaTarefas.where((t) => t.status == 'cancelada').toList();
   }
 print('\n==\n');
 
+// SOMA DOS VALORES //
 double totalConcluidas = 0.0;
   for (var t in concluidas) {
     totalConcluidas += t.valor;
@@ -169,6 +177,7 @@ if (pendentes.isEmpty) {
   }
 print('\n==\n');
 
+// MAP PARA CONTAR HORAS //
 Map<String, int> horasPorStatus = {
     'concluida': 0,
     'em andamento': 0,
@@ -188,18 +197,19 @@ print('Horas por status:');
   for (var map in dadosTarefas) {
     List<String> m = [];
 
+// VALIDAR DADOS NULOS //
 if (map['titulo'] == null) m.add('título ausente');
 if (map['responsavel'] == null) m.add('responsável ausente');
 if (map['horas'] == null) m.add('horas ausentes');
 if (map['valor'] == null) m.add('valor inválido');
 if (map['status'] == null) m.add('status vazio');
-
 if (m.isNotEmpty) {
 print('- ID ${map['id']}: ${m.join(' ou ')}');
 }
 }
 print('\n==\n');
 
+// MAPEAMENTO DE STATUS //
 Set<String> statusUnicos = listaTarefas.map((t) => t.status ?? 'sem status').toSet();
 print('Status encontrados:');
 statusUnicos.forEach((status) => print(status));
@@ -228,6 +238,7 @@ statusUnicos.forEach((status) => print(status));
   statusUnicos.forEach((s) => print(s));
   print('');
 
+// SUBSTITUIR NULOS POR MENSAGEM //
 print('Tarefas com dados incompletos:');
   for (var map in dadosTarefas) {
     List<String> falhas = [];
@@ -245,6 +256,8 @@ print('Tarefas com dados incompletos:');
   }
   print('------------');
  }
+
+// CRIAÇÃO DE CLASSES, HERANÇA E POLIMORFISMO //
 class ModeloBase {
   int id;
   String titulo;
@@ -279,6 +292,7 @@ void exibirResumo() {
   print('Tarefa $id - $titulo | Status: $status | Valor: R\$ $valor');
   }
 }
+// RELATÓRIO FINAL //
 class RelatorioTarefas {
 final List<Tarefa> _tarefas;
 RelatorioTarefas(List<Tarefa> tarefas) : _tarefas = tarefas;
