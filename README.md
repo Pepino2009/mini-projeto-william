@@ -39,3 +39,4 @@ https://trello.com/invite/b/6a1b2930693e938342bcaa8c/ATTIea0cb1078c5d49a3a672615
 
 Segue o link do video aqui explicativo!
 
+https://drive.google.com/file/d/1wSHdDTeSY7M9UaL0BR-1AruYJfakpLUb/view?usp=drivesdk
